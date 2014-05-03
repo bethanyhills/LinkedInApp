@@ -30,7 +30,7 @@ function onLinkedInAuth() {
   //create a view to render 
   app.ProfileView = Backbone.View.extend({
     el: $('#container'),
-    template: _.template("<div>"+ myprofile.get('first')+" "+myprofile.get('last')+"</div>"),
+    template: _.template($("#profile").html()),
     initialize: function(){
       this.render();
     },
