@@ -4,9 +4,9 @@ function onLinkedInLoad() {
 }
  //Runs when the viewer has authenticated
 function onLinkedInAuth() {
-  IN.API.Profile("me").result(function(profiles) {
-  person = profiles.values[0];
-  console.log(person.firstName);
+  IN.API.Profile("me").fields("first-name", "last-name", "headline", "picture-url", "location", "educations", "num-recommenders", "skills", "interests").result(function(profiles) {
+  var person = profiles.values[0];
+  console.log(person);
   
   var app = {}; //create namespace
     
@@ -42,7 +42,7 @@ function onLinkedInAuth() {
 
   var view = new app.ProfileView({model: myprofile});
   
-  }); 
+  });
 
 } //close auth function
 
