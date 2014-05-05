@@ -14,6 +14,11 @@ body {
   font-size: 24px;
 }
 
+#wrapper {
+    height:100%;
+    width: 100%;
+}
+
 section {
   position: relative;
   overflow: hidden;
@@ -27,16 +32,63 @@ section:nth-child(2n) {
   background: #16a085;
 }
 
+h1:nth-child(2n) {
+  margin-left: 50%;
+  margin-top: 25%;
+}
+
 .hide {
   display: none;
 }
 
-.contact-container { width:400px; padding:10px; border:1px solid #aaa; margin:0 10px 10px 0; float:left; font-family:sans-serif; color:#333; background-color:#eee; }
-.contact-container h1 { margin:0; font-weight:normal; }
-.contact-container h1 span { float:right; font-size:14px; line-height:24px; font-weight:normal; }
-.contact-container img { border-width:1px; border-style:solid; border-color:#fff; border-right-color:#aaa; border-bottom-color:#aaa; margin-right:10px; float:left; }
-.contact-container div { margin-bottom:24px; font-size:14px; }
-.contact-container a { color:#333;}
-.contact-container dl { margin:0; float:left; font-size:14px; }
-.contact-container dt, .contact-container dd { margin:0; float:left; }
-.contact-container dt { width:50px; clear:left; }
+#contacts {
+  width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.contact-container { 
+  width:200px; 
+  height: 200px; 
+  overflow:auto; 
+  padding:10px; 
+  border:1px solid #aaa; 
+  margin:0 10px 10px 0; 
+  float:left; 
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; 
+  color:#333; 
+  background-color:#eee; 
+}
+.contact-container h5 { 
+  margin:0; 
+  font-weight:normal; 
+}
+.contact-container h5 span { 
+  float:right; 
+  font-size:14px; 
+  line-height:24px; 
+  font-weight:normal; 
+}
+.contact-container img { 
+  border-width:1px; 
+  border-style:solid; 
+  border-color:#fff; 
+  border-right-color:#aaa; 
+  border-bottom-color:#aaa; 
+  margin-right:10px; 
+  float:left; 
+}
+.contact-container div { 
+  margin-bottom:24px; 
+  font-size:14px; 
+}
+.contact-container a { 
+  color:#333;
+}
+
+.clearfix { 
+  clear: both; 
+}
+
+
