@@ -18,25 +18,25 @@ function onLinkedInAuth() {
 //current user profile data
 function profileData(profiles) {
   var person = profiles.values[0];
+
   //if no photo or location, add these values instead
   if (!person.pictureUrl) { person.pictureUrl = "images/nophoto.jpeg"; }
   if (!person.location.name) { person.location.name = "secret location"; }
-  console.log(person);
+
   var first = person.firstName;
   var last = person.lastName;
   var avatar = person.pictureUrl;
   var headline = person.headline;
   var location = person.location.name;
-  console.log(avatar);
+  
   //smidge of jQuery to populate current user info within webapp
   $("#avatar").append("<img src="+avatar+">");
   $(".first").text(first);
-  
   $("#name").append("<h1>" + first + "." + last +"." +"</h1>\
     <h2 class='emph'>" + first+last + ".</h2>\
     <h1>" + first + ".</h1>");
-
   $(".headline").text(headline);
+  
   //check if their location is/is not austin, run code accordingly
   var str = location;
   var x = str.indexOf("Austin");
@@ -55,7 +55,7 @@ function profileData(profiles) {
 function connectionsData(results) {  
   // console.log(results);
   //format data for use in backbone collection
-  var contacts = [];
+  var connections = [];
   var counter = 0;
   
   for (var i in results.values) {
@@ -73,20 +73,20 @@ function connectionsData(results) {
     profile: profile.publicProfileUrl
   };
 
-  contacts[counter] = pos;
+  connections[counter] = pos;
   counter++;
   } //close for loop
-  // console.log(contacts);
 
-  var Contact = Backbone.Model.extend({
+  //define individual contact model
+  var Connection = Backbone.Model.extend({
     defaults: {}
   });
-
+  //define collection for managing contacts
   var Directory = Backbone.Collection.extend({
-      model: Contact
+      model: Connection
   });
-
-  var ContactView = Backbone.View.extend({
+  //define template to render individual contacts
+  var ConnectionView = Backbone.View.extend({
     tagName: "article",
     className: "contact-container",
     template: $("#contactTemplate").html(),
@@ -103,25 +103,26 @@ function connectionsData(results) {
     el: $("#contacts"),
 
     initialize: function () {
-      this.collection = new Directory(contacts);
+      this.collection = new Directory(connections);
       this.render();
     },
 
     render: function () {
       var that = this;
       _.each(this.collection.models, function (item) {
-        that.renderContact(item);
+        that.renderConnection(item);
       }, this);
     },
 
-    renderContact: function (item) {
-      var contactView = new ContactView({
+    renderConnection: function (item) {
+      var contactView = new ConnectionView({
         model: item
       });
       this.$el.append(contactView.render().el);
     }
   });
 
+  //initialize directory view
   var directory = new DirectoryView();
 
 } //close connectionsData
