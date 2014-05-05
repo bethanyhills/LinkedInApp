@@ -109,4 +109,18 @@ h1:nth-child(2n) {
   clear: both; 
 }
 
+@media screen and (max-width:478px) {
+  body {font-size: 14px;}
+  .center, .emph {font-size: 14px;}
+  #contacts {width: 100%;}
+  .contact-container {float: none;}
+}
+
+@media screen and (max-width: 740px) {
+  body {font-size: 20px;}
+  .center, .emph {font-size: 20px;}
+  .contact-container {float: none;}
+  #contacts {width: 100%;}
+}
+
 
