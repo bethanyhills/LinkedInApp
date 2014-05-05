@@ -41,6 +41,7 @@ h1:nth-child(2n) {
   margin-left: 50%;
   margin-top: 15%;
   padding-right: 50px;
+  color: #F7FE2E;
 }
 
 #LI {
@@ -54,6 +55,7 @@ h1:nth-child(2n) {
 .emph {
   font-size: 50px;
   font-style: italic;
+  color: #F7FE2E;
 }
 
 .center {

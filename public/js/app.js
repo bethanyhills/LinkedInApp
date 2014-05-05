@@ -36,7 +36,7 @@ function profileData(profiles) {
     <h2 class='emph'>" + first+last + ".</h2>\
     <h1>" + first + ".</h1>");
   $(".headline").text(headline);
-  
+
   //check if their location is/is not austin, run code accordingly
   var str = location;
   var x = str.indexOf("Austin");
@@ -48,15 +48,19 @@ function profileData(profiles) {
   } 
   else {
     $('#loc_statement').text("And I see you live in Austin! Me too!");
+    $('#photo').append("<img src='images/austin.jpg'>");
   }
 }
 
 //Pull current user connections data, use backbone to manage and render
 function connectionsData(results) {  
-  // console.log(results);
+  console.log(results);
   //format data for use in backbone collection
   var connections = [];
   var counter = 0;
+  var count = results._count;
+  // var count = results._count;
+  $("#count").append("<h3>" + count + " to be exact.</h3>");
   
   for (var i in results.values) {
 
