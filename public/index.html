@@ -11,71 +11,87 @@
   </head>
 <body>
 <div id="wrapper">
+  <!-- Intro Section -->
 <section data-scroll-index='0'id="login">
   <div class="content" id="intro">
-    <h1>Hi! Let's do this thing!</h1>
+    <h1 class="center">Hi! Let's do this thing!</h1>
     <h1>Login with LinkedIn and lets get to know each other.</h1>
-    <div id="login">
+    <div id="LI">
     <script type="IN/Login"></script>
   </div>
   </div>
 </section>
 <section class="hide" data-scroll-index='1'>
-  <div class="content" id="container">
+  <div class="content">
+    <h1 class="center">Thanks for connecting with me!</h1>
+    <h3>There is SO much information on LinkedIn that its hard to navigate.</h3>
+    <h1>But lets see what I can find...</h1>
+  </div>
+</section>
+<!-- Name Section -->
+<section class="hide" data-scroll-index='2'>
+  <div class="content">
+    <div id="avatar"></div>
     <div id="name"></div>
-    <h1>That is a great name!</h1>
+    <h2>That is a great name!</h2>
     <h1> Super nice to meet you!</h1>
   </div>
 </section>
-<section class="hide" data-scroll-index='2'>
+<!-- Location Section -->
+<section class="hide" data-scroll-index='3'>
   <div class="content" id="location">
     <h1 id="loc_statement"></h1>
     <h1>Small world!</h1>
   </div>
 </section>
-<section class="hide" data-scroll-index='3'>
-  <div class="content">
-    <h1>I like your photo!</h1>
-    <div id="avatar"></div>
-    <h1>And I see you're a <span class="headline"></span>!</h1>
-    <h1>Whats that like?</h1>
-  </div>
-</section>
+<!-- Photo and Headline Section -->
 <section class="hide" data-scroll-index='4'>
   <div class="content">
-    <h1><span class="first"></span>, you dont say much do you?</h1>
+    <h1>Your headline ("<span class="headline"></span>") sounds very impressive...</h1>
+    <h1>What's that like?</h1>
   </div>
 </section>
 <section class="hide" data-scroll-index='5'>
   <div class="content">
-    <h1> No worries! I LOVE talking!</h1>
+    <h1>... you dont say much do you?</h1>
+    <h1> No worries! I <span class="emph">LOVE </span>talking!</h1>
   </div>
 </section>
 <section class="hide" data-scroll-index='6'>
   <div class="content">
-    <h1>Woah <span class="first"></span>! You have so many LinkedIn connections!</h1>
-    <h1> How do you keep track of them all?</h1>
+    <h1>Woah! You have a ton LinkedIn connections!</h1>
+    <h1>It must be hard to keep track of them all.</h1>
+    <h1>But that gives me an idea...</h1>
   </div>
 </section>
+<!-- Lookbook Section -->
 <section class="hide" data-scroll-index='7'>
   <div class="content">
-    <h1>Here. I've made you a lookbook to make it easier: </h1>
-    <div id="contacts" class="js-masonry"
-  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".contact-container" }'></div>
-</div>
+    <h1 class="center">Here. I've made you a lookbook to make it easier: </h1>
+    <div id="contacts"></div>
+  </div>
 </section>
 <section class="hide" data-scroll-index='8'>
   <div class="content">
-    <h1>Listen <span class="first"></span>, you seem like a cool person.</h1>
-    <h1>And I know I'm a cool person</h1>
-    <h4>(And I even have a twitter handle so that clearly proves I'm a real person...)</h4>
+    <h1>I hope that's helpful!</h1>
+    <h1>Listen <span class="first"></span>, you seem neat.</h1>
+    <h4>And I like to think I'm a neat person...</h4>
   </div>
 </section>
+<!-- connect on linkedin -->
 <section class="hide" data-scroll-index='9'>
   <div class="content">
-    <h1>What do you say we connect on Linkedin?</h1>
-    <div id="connect">
-  <script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/bethanynagel" data-format="inline" data-related="false"></script></div>
+    <h1 class="center">We should do this again!</h1>
+    <h4 class="center-small">You can find me in the usual spots:</h4>
+    <div id="connect" class="center">
+      <!-- linkedin -->
+      <script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/bethanynagel" data-format="inline" data-related="false"></script>
+      <!-- twitter -->
+      <div class="center">
+      <a href="https://twitter.com/bethanynagel" target="_blank"><img src="../images/twitter.jpeg"></a>
+      <!-- github -->
+      <a href="http://github.com/bethanynagel" target="_blank"><img src="../images/github.jpeg"></a></div>
+    </div>
   </div>
 </section>
 </div> <!-- closes wrapper -->

@@ -10,7 +10,7 @@ function onLinkedInAuth() {
   //api call for current user connection data
   IN.API.Connections("me").fields("first-name", "last-name", "headline", "picture-url", "location", "public-profile-url").result(connectionsData);
   //on auth, create scroll functionality
-  $("#login").append("<h1>Login Success! Sweet. Hit the down key...</h1>")
+  $("#login").append("<h1>Login Success! Sweet. Scroll down ...</h1>")
   $(".hide").show();
   $("#intro").addClass("hide");
 }
@@ -27,9 +27,9 @@ function profileData(profiles) {
   var avatar = person.pictureUrl;
   var headline = person.headline;
   var location = person.location.name;
-
+  console.log(avatar);
   //smidge of jQuery to populate current user info within webapp
-  $("#avatar").append("<img src=" + avatar + "/>");
+  $("#avatar").append("<img src="+avatar+">");
   $(".first").text(first);
   
   $("#name").append("<h1>" + first + "." + last +"." +"</h1>\
@@ -47,21 +47,21 @@ function profileData(profiles) {
     $('#loc_statement').text("You're from the" + location + "? My best friend's cousins college roommate is from around there!");
   } 
   else {
-    $('#loc_statement').text("You live in Austin?! Me too! How about this weather, eh?");
+    $('#loc_statement').text("And I see you live in Austin! Me too!");
   }
 }
 
 //Pull current user connections data, use backbone to manage and render
 function connectionsData(results) {  
-  console.log(results);
+  // console.log(results);
   //format data for use in backbone collection
   var contacts = [];
   var counter = 0;
   
   for (var i in results.values) {
 
-  profile = results.values[i];
-
+  var profile = results.values[i];
+  
   if (!profile.pictureUrl) { profile.pictureUrl = "images/nophoto.jpeg"; } 
   var pos = {
     firstName: profile.firstName,
@@ -76,7 +76,6 @@ function connectionsData(results) {
   contacts[counter] = pos;
   counter++;
   } //close for loop
-
   // console.log(contacts);
 
   var Contact = Backbone.Model.extend({
