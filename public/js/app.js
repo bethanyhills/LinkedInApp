@@ -32,9 +32,7 @@ function profileData(profiles) {
   //smidge of jQuery to populate current user info within webapp
   $("#avatar").append("<img src="+avatar+">");
   $(".first").text(first);
-  $("#name").append("<h1>" + first + "." + last +"." +"</h1>\
-    <h2 class='emph'>" + first+last + ".</h2>\
-    <h1>" + first + ".</h1>");
+  $("#name").append("<h2 class='emph'>" + first+ " " + last + ".</h2>");
   $(".headline").text(headline);
 
   //check if their location is/is not austin, run code accordingly
@@ -42,13 +40,14 @@ function profileData(profiles) {
   var x = str.indexOf("Austin");
   if (str === "secret location") {
     $('#loc_statement').text("It looks like you keep your location secret on LinkedIn.  Which makes me think you're a spy.  ...Are you a spy?");
-  }
+  } $('#location h1').last().remove();
   else if (x === -1){
     $('#loc_statement').text("You're from the" + location + "? My best friend's cousins college roommate is from around there!");
   } 
   else {
     $('#loc_statement').text("And I see you live in Austin! Me too!");
     $('#photo').append("<img src='images/austin.jpg'>");
+    $('#location').append("<h1>Keep Austin Weird, amaright?</h1>");
   }
 }
 
@@ -89,7 +88,7 @@ function connectionsData(results) {
   var Directory = Backbone.Collection.extend({
       model: Connection
   });
-  //define template to render individual contacts
+  //define view to render individual contacts
   var ConnectionView = Backbone.View.extend({
     tagName: "article",
     className: "contact-container",
@@ -102,7 +101,7 @@ function connectionsData(results) {
       return this;
     }
   });
-
+  //define collection view
   var DirectoryView = Backbone.View.extend({
     el: $("#contacts"),
 
