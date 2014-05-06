@@ -40,8 +40,9 @@ function profileData(profiles) {
   var x = str.indexOf("Austin");
   if (str === "secret location") {
     $('#loc_statement').text("It looks like you keep your location secret on LinkedIn.  Which makes me think you're a spy.  ...Are you a spy?");
-  } $('#location h1').last().remove();
-  else if (x === -1){
+    $('#location h1').last().remove();
+  }
+  else if (x === -1) {
     $('#loc_statement').text("You're from the" + location + "? My best friend's cousins college roommate is from around there!");
   } 
   else {
