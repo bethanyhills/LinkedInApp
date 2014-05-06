@@ -1,6 +1,7 @@
 #LinkedIn Connector App
 
 Author: Bethany Nagel
+
 Live Site: http://linkedinconnector.herokuapp.com
 
 The purpose of this app is to rework the way people connect through LinkedIn.  LinkedIn can be overwhelming and hard to navigate.  The information is not presented in a way that is engaging.  This app attempts to add a bit of humor and personality to the way people connnect on LinkedIn, as well as present information in a clean and easily accessible way.
